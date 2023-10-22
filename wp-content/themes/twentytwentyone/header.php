@@ -18,6 +18,7 @@
 	<meta charset="<?php bloginfo( 'charset' ); ?>" />
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
 	<?php wp_head(); ?>
+	<link rel='stylesheet' id='twenty-twenty-one-style-css' href='http://localhost:81/doancms2023/wp-content/themes/twentytwentyone/style.css?ver=1.9' media='all' />
 </head>
 
 <body <?php body_class(); ?>>
