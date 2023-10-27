@@ -650,3 +650,8 @@ if ( ! function_exists( 'wp_get_list_item_separator' ) ) :
 		return __( ', ', 'twentytwentyone' );
 	}
 endif;
+
+function wpdocs_custom_excerpt_length( $length ) {
+	return 25;
+}
+add_filter( 'excerpt_length', 'wpdocs_custom_excerpt_length', 999 );
