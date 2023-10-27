@@ -5941,7 +5941,7 @@ a {
   .date {
 	display: block;
 	text-align: center;
-	padding-top: 18px !important;
+	padding-top: 14px !important;
 	padding: 0 25px;
   }
   .date .day {
