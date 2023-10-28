@@ -33,7 +33,7 @@ get_header(); ?>
 		endif;
 		?>
 	</div>
-	<div class="content-main">
+	<div class="content-main change-contain-main">
 		<?php
 		if (have_posts()) {
 
