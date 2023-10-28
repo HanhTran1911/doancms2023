@@ -5978,3 +5978,103 @@ a {
   .post:first-child{
 	margin-top: 0 !important;
   }
+  /* Xem nhiều */
+  .content-archive .widget .wp-block-group__inner-container {
+	width: 500px;
+  }
+  .content-archive .widget .widget-title {
+	padding-bottom: 10px;
+	font-size: 14px;
+	width: 80px;
+	margin: 0 !important;
+	border-bottom: 0.8px solid #914a4a;
+  }
+  .content-archive .widget .wp-block-group__inner-container .wp-block-latest-posts__list {
+	font-size: 13px;
+	border-top: 0.8px solid #cec6c6;
+  }
+  .content-archive .widget .wp-block-group__inner-container .wp-block-latest-posts__list li {
+	border-bottom: #cec6c6 solid 0.8px;
+	padding: 10px 0;
+	padding-right: 10px;
+	margin: 0;
+	counter-increment: post-number;
+	display: flex;
+	align-items: center;
+  }
+  .content-archive .widget
+	.wp-block-group__inner-container
+	.wp-block-latest-posts__list
+	li::before {
+	content: counter(post-number) " "; /* Sử dụng dấu chấm và khoảng trắng sau số */
+	content: counter(post-number) " ";
+	font-weight: bold;
+	margin-right: 15px;
+	font-family: "Prata", serif;
+	font-size: 2.5em;
+	line-height: 1em;
+  }
+  .widget{
+	margin: 0 !important;
+  }
+  .content-archive .widget .wp-widget-group__inner-blocks {
+	margin: 0 !important;
+  }
+  .content-archive .widget
+	.wp-block-group__inner-container
+	.wp-block-latest-posts__list
+	li:last-child {
+	border-bottom: none;
+  }
+  .content-archive .widget
+	.wp-block-group__inner-container
+	.wp-block-latest-posts__list
+	li:nth-child(7) {
+	border-bottom: none;
+  }
+  .content-archive .widget
+	.wp-block-group__inner-container
+	.wp-block-latest-posts__list
+	li:nth-child(2),
+  .content-archive .widget
+	.wp-block-group__inner-container
+	.wp-block-latest-posts__list
+	li:nth-child(4),
+  .content-archive .widget
+	.wp-block-group__inner-container
+	.wp-block-latest-posts__list
+	li:nth-child(6),
+  .content-archive .widget
+	.wp-block-group__inner-container
+	.wp-block-latest-posts__list
+	li:nth-child(8) {
+	border-left: 0.8px solid #cec6c6;
+	padding-left: 20px;
+  }
+  
+  .wp-block-latest-posts.columns-2 li {
+	width: calc(51.6% - 0.625em);
+  }
+  
+  .change-content {
+	margin-left: 10px;
+	display: flex;
+	overflow: hidden;
+  }
+  
+  .content-archive {
+	width: 35%;
+  }
+  .content-archive .widget-area {
+	display: unset;
+  }
+  .content-main {
+	width: 50%;
+  }
+  .content-comment {
+	width: 35%;
+  }
+  
+  .content-archive .widget-area .wp-block-latest-posts > li > a {
+	font-size: 13px !important;
+  }
