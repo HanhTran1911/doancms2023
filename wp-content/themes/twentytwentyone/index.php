@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The main template file
  *
@@ -15,31 +16,56 @@
  */
 
 get_header(); ?>
-
-<?php if ( is_home() && ! is_front_page() && ! empty( single_post_title( '', false ) ) ) : ?>
+<?php if (is_home() && !is_front_page() && !empty(single_post_title('', false))) : ?>
 	<header class="page-header alignwide">
 		<h1 class="page-title"><?php single_post_title(); ?></h1>
 	</header><!-- .page-header -->
 <?php endif; ?>
+<div class="content change-content">
+	<div class="content-archive">
+		<?php if (is_active_sidebar('sidebar-1')) : ?>
 
+			<aside class="widget-area">
+				<?php dynamic_sidebar('sidebar-1'); ?>
+			</aside><!-- .widget-area -->
+
+		<?php
+		endif;
+		?>
+	</div>
+	<div class="content-main">
+		<?php
+		if (have_posts()) {
+
+			// Load posts loop.
+			while (have_posts()) {
+				the_post();
+				get_template_part('template-parts/content/content', get_theme_mod('display_excerpt_or_full_post', 'excerpt'));
+			}
+
+			// Previous/next page navigation.
+			twenty_twenty_one_the_posts_navigation();
+		} else {
+
+			// If no content, include the "No posts found" template.
+			get_template_part('template-parts/content/content-none');
+		}
+		?>
+	</div>
+	<div class="content-comment">
+		<div class="last-comment">
+			<?php
+			if (is_active_sidebar('sidebar-right')) : ?>
+
+				<aside class="widget-area">
+					<?php dynamic_sidebar('sidebar-right'); ?>
+				</aside><!-- .widget-area -->
+
+			<?php
+			endif;
+			?>
+		</div>
+	</div>
+</div>
 <?php
-if ( have_posts() ) {
-
-	// Load posts loop.
-	while ( have_posts() ) {
-		the_post();
-
-		get_template_part( 'template-parts/content/content', get_theme_mod( 'display_excerpt_or_full_post', 'excerpt' ) );
-	}
-
-	// Previous/next page navigation.
-	twenty_twenty_one_the_posts_navigation();
-
-} else {
-
-	// If no content, include the "No posts found" template.
-	get_template_part( 'template-parts/content/content-none' );
-
-}
-
 get_footer();
