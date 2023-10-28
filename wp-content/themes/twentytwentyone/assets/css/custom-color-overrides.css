@@ -1,5 +1,131 @@
-/**
- * Custom Color Overrides
- *
- * This file is automatically populated if the user chooses custom colors in the Customizer.
- */
+ /**
+  * Custom Color Overrides
+  *
+  * This file is automatically populated if the user chooses custom colors in the Customizer.
+  */
+ @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+ 
+ #footer-bottom {
+     background-color: #007b5e;
+     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+ 
+ }
+ 
+ #footer-bottom .widget-area {
+     margin: 0;
+ }
+ 
+ #footer-bottom .footer-navigation {
+     margin: 0;
+ }
+ 
+ #footer-bottom a,
+ #footer-bottom h2,
+ #footer-bottom li {
+     color: aliceblue;
+ }
+ 
+ #footer-bottom svg {
+     fill: aliceblue;
+     width: 30px;
+   height: 30px;
+ }
+ 
+ #footer-bottom #colophon {
+     padding: 0;
+ }
+ 
+ #footer-bottom a {
+     text-decoration: none;
+ }
+ 
+ #footer-bottom .widget-area li:hover a {
+     font-weight: 700 !important;
+ }
+ 
+ #footer-bottom .widget-area li:hover {
+     margin-left: 5px !important;
+     font-weight: 700 !important;
+ }
+ 
+ #footer-bottom .widget-area li::before {
+     content: "\f101";
+     font-family: FontAwesome;
+     font-style: normal;
+     font-weight: normal;
+     text-decoration: inherit;
+     font-size: 18px;
+     padding-right: 0.5em;
+     top: 10px;
+     left: 0;
+ }
+ 
+ #footer-bottom li {
+     display: flex;
+     align-items: center;
+     font-size: 1rem; 
+ }
+ #footer-bottom p {
+     font-size: 1rem; 
+ }
+ 
+ #footer-bottom .widget-area .widget-title {
+     padding-left: 10px;
+     border-left: 3px solid #eeeeee;
+     line-height: 1.2 !important;
+     font-size: 1.25rem;
+     font-family: inherit;
+     font-weight: 500;
+     line-height: 1.2;
+ }
+ #footer-bottom  .wp-block-latest-comments .wp-block-latest-comments__comment {
+     margin-bottom: 0 !important;
+     margin-top: 0 !important;
+     padding: 1.8px 0;
+ }
+ .footer-navigation-wrapper li a
+ {
+     padding: 6px !important;
+ }
+ 
+ /* Comment */
+ .last-comment .wp-block-latest-comments__comment-meta
+ {
+     display: none;
+ }
+ .last-comment .wp-block-latest-comments__comment{
+     color:#5b8cc1;
+     font-weight: bold;
+     border-bottom: 1px solid #c2bdbd;
+ }
+ .last-comment .widget-area {
+     display: block;
+     margin-top: 0;
+     padding-top: 0;
+ }
+ .last-comment .widget-area .widget-title {
+     line-height: 1.2 !important;
+     font-size: 1.25rem;
+     font-family: inherit;
+     font-weight: 500;
+     line-height: 1.2;
+ }
+ .last-comment .widget-area p {
+     font-size: 1rem !important;
+     padding-left: 8px;
+ }
+ .last-comment .wp-block-latest-comments .wp-block-latest-comments__comment
+ {
+     margin-top: 0 !important;
+     margin-bottom: 0 !important;
+ }
+ .last-comment h2{
+     border-bottom: 2px solid black;
+     width: 70px;
+     padding-bottom: 10px;
+     margin: 0;
+ }
+ .last-comment .wp-widget-group__inner-blocks
+ {
+     margin-top: 12px;
+ }
