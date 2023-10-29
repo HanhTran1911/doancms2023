@@ -1,84 +1,120 @@
-<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
+    crossorigin="anonymous"></script>
 <style>
-.badge-default {
-  background-color: #777;
-}
-.badge-primary {
-  background-color: #337ab7;
-}
-.badge-success {
-  background-color: #5cb85c;
-}
-.badge-info {
-  background-color: #5bc0de;
-}
-.badge-warning {
-  background-color: #f0ad4e;
-}
-.badge-danger {
-  background-color: #d9534f;
-}
+    .custom-flex {
+        display: flex !important;
+    }
 
-.navbar-icon-top .navbar-nav>li>a>.fa, .navbar-icon-top .navbar-nav>li>a>.glyphicon {
-    position: relative;
-    width: 36px;
-    font-size: 24px;
-}
-.navbar-icon-top .navbar-nav>li>a>.fa>.badge, .navbar-icon-top .navbar-nav>li>a>.glyphicon>.badge {
-    position: absolute;
-    right: 0;
-    font-family: sans-serif;
-}
-.navbar-icon-top .navbar-nav>li>a>.fa {
-    top: 3px;
-    line-height: 12px;
-}
-.navbar-icon-top .navbar-nav>li>a>.fa>.badge {
-    top: -10px;
-}
-.navbar-icon-top .navbar-nav>li>a>.glyphicon {
-    top: 6px;
-    line-height: 6px;
-}
-.navbar-icon-top .navbar-nav>li>a>.glyphicon>.badge {
-    top: -16px;
-}
+    .container {
+        display: flex;
+        position: relative;
+        border: #cfcfcf 1px solid;
+        padding-left: 20px;
+        padding-right: 20px;
+        border-radius: 5px;
+        background-color: #f5f5f5;
+    }
 
-@media (min-width: 768px) {
-    .navbar-icon-top .navbar-brand {
-        padding: 25px 15px;
+    .footer-left {
+        display: flex;
     }
-    .navbar-icon-top .navbar-text {
-        margin-top: 25px;
-        margin-bottom: 25px;
+
+    .footer-right {
+        position: absolute;
+        right: 0;
     }
-    .navbar-icon-top .navbar-btn, .navbar-icon-top .navbar-form {
-        margin-top: 18px;
-        margin-bottom: 18px;
+
+    .active {
+        list-style: none;
+        text-decoration: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        margin-left: 10px;
+        margin-right: 10px;
+        background: #e1e1e1;
+        display: flex;
+        align-items: center;
     }
-    .navbar-icon-top .navbar-nav>li>a {
-        text-align: center;
-        display: table-cell;
-        height: 70px;
-        vertical-align: middle;
-        padding-top: 0;
-        padding-bottom: 0;
+
+    .custom-a {
+
+        text-decoration: none;
+        color: black;
+        font-size: 13px;
     }
-    .navbar-icon-top .navbar-nav>li>a>.fa, .navbar-icon-top .navbar-nav>li>a>.glyphicon {
-        display: block;
-        width: 48px;
-        margin: 2px auto 4px auto;
-        top: 0;
-        line-height: 24px;
+
+    .form-search {
+        display: flex;
+        align-items: center;
     }
-    .navbar-icon-top .navbar-nav>li>a>.fa>.badge, .navbar-icon-top .navbar-nav>li>a>.glyphicon>.badge {
-        top: -7px;
+
+    .btn-custom {
+        border: 1px solid #9b9393;
+        background: white;
+        display: flex !important;
+        align-items: center !important;
     }
-}
-	</style>
+
+    .form-control {
+        border: 1px solid #ccc !important;
+        display: block !important;
+        width: 100% !important;
+        padding: 0.375rem 0.75rem !important;
+        font-size: 1rem !important;
+        font-weight: 400 !important;
+        line-height: 1.5 !important;
+        color: var(--bs-body-color) !important;
+        -webkit-appearance: none !important;
+        -moz-appearance: none !important;
+        appearance: none !important;
+        background-color: var(--bs-body-bg) !important;
+        background-clip: padding-box !important;
+        border: var(--bs-border-width) solid var(--bs-border-color) !important;
+        border-radius: var(--bs-border-radius) !important;
+        transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out !important;
+    }
+
+    .btn {
+        border: var(--bs-border-width) solid var(--bs-border-color) !important;
+        border-radius: var(--bs-border-radius) !important;
+        background: white !important;
+        color: black !important;
+        margin-left: 10px;
+    }
+
+    .menu {
+        display: flex;
+        flex-direction: column;
+        margin-right: 25px;
+        margin-left: 25px;
+        align-items: center;
+
+    }
+
+    .icon-search {
+        display: flex;
+        flex-direction: column;
+        margin-right: 25px;
+        align-items: center;
+
+    }
+
+    .dropdown {
+        display: flex;
+        flex-direction: column;
+        margin-right: 20px;
+        align-items: center;
+        list-style: none;
+    }
+
+    .dropdown-toggle {
+        color: black;
+        text-decoration: none;
+    }
+</style>
 <?php
 /**
  * Displays the site header.
@@ -88,53 +124,70 @@
  * @since Twenty Twenty-One 1.0
  */
 
-$wrapper_classes  = 'site-header';
+$wrapper_classes = 'site-header';
 $wrapper_classes .= has_custom_logo() ? ' has-logo' : '';
-$wrapper_classes .= ( true === get_theme_mod( 'display_title_and_tagline', true ) ) ? ' has-title-and-tagline' : '';
-$wrapper_classes .= has_nav_menu( 'primary' ) ? ' has-menu' : '';
+$wrapper_classes .= (true === get_theme_mod('display_title_and_tagline', true)) ? ' has-title-and-tagline' : '';
+$wrapper_classes .= has_nav_menu('primary') ? ' has-menu' : '';
 ?>
 
-<header id="masthead" class="<?php echo esc_attr( $wrapper_classes ); ?>">
+<header id="masthead" class="<?php echo esc_attr($wrapper_classes); ?>" style="display: block;">
+    <div class="container">
+        <div class="footer-left">
+            <a class="navbar-brand py-3" href="#" style="text-decoration: none;display: flex;
+    align-items: center;">
+                <?php get_template_part('template-parts/header/site-branding'); ?>
+            </a>
+            <li class="active"><a href="#" class="custom-a">Home </a></li>
 
-<div class="container">
-    <nav class="navbar navbar-icon-top navbar-default">
-        <div class="container-fluid">
-            <!-- Brand and toggle get grouped for better mobile display -->
-        
-                <a class="navbar-brand" href="#"><?php get_template_part( 'template-parts/header/site-branding' ); ?></a>
+            <form class="form-search py-3">
+                <div class="col-auto">
+                    <input type="text" class="form-control" name="s" id="adminbar-search" type="text" value=""
+                        maxlength="150">
+                </div>
+                <div class="col-auto">
+                    <button type="submit" class="btn ">Submit</button>
+                </div>
+            </form>
+        </div>
+        <div class="footer-right custom-flex py-2">
+            <?php get_template_part('template-parts/header/site-nav'); ?>
 
-            <!-- Collect the nav links, forms, and other content for toggling -->
-            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                <ul class="nav navbar-nav">
-                    <li class="active">Home </li>
-                            
+            <div class="menu">
+                <i><svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
+                        viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
+                    </svg> </i>
+                <a href="" class="custom-a">menu</a>
+            </div>
+            <div class="icon-search">
+                <i><svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
+                        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
+                    </svg> </i>
+                <a href="" class="custom-a">Search</a>
+            </div>
+
+            <li class="dropdown">
+                <i> <svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                        viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                        <path
+                            d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
+                    </svg>
+                </i>
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                    aria-expanded="false">
+                    Account
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Action</a></li>
+                    <li><a href="#">Another action</a></li>
+                    <li><a href="#">Something else here</a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a href="#">Separated link</a></li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                    </div>
-                    <button type="submit" class="btn btn-default">Submit</button>
-                </form>
-
-                <ul class="nav navbar-nav navbar-right">
-					<li> <?php get_template_part( 'template-parts/header/site-nav' ); ?>
-                   </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                            <i class="fa fa-user-circle-o"></i>
-                            Account <span class="caret"></span>
-                        </a>
-                        <ul class="dropdown-menu">
-                            <li><a href="#">Action</a></li>
-                            <li><a href="#">Another action</a></li>
-                            <li><a href="#">Something else here</a></li>
-                            <li role="separator" class="divider"></li>
-                            <li><a href="#">Separated link</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </div><!-- /.container-fluid -->
-    </nav>
-</div>
+            </li>
+        </div>
+    </div>
 </header><!-- #masthead -->
