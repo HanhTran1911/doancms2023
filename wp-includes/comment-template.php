@@ -5,8 +5,11 @@
 	border-radius: 5px !important;
 padding: 5px 10px !important;
 }
-*:hover{
+.button-share{
 	pointer-events: none;	
+}
+.site textarea:focus {
+    outline: none !important; /* hoặc outline: 0; */
 }
 	</style>
 <?php
