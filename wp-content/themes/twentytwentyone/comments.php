@@ -2,8 +2,13 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <style>
-	.comments-area {
+	.card {
 		background: white;
+	border: none;
+	}
+	.comment-respond{
+		border: 1px solid #c1c1c1;
+		border-radius: 5px;
 	}
 
 </style>
@@ -36,7 +41,7 @@ $twenty_twenty_one_comment_count = get_comments_number();
 ?>
 
 <div id="comments"
-	class="card comments-area default-max-width <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
+	class="comments-area default-max-width <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
 
 	<?php
 	if (have_comments()):
@@ -97,7 +102,9 @@ $twenty_twenty_one_comment_count = get_comments_number();
 	comment_form(
 		array(
 			'title_reply' => esc_html__('Make a post', 'twentytwentyone'),
-			'title_reply_before' => '<div  class="card-header">
+			'title_reply_before' => '
+			<div class="card">
+			<div  class="card-header">
 			<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
 			<li class="nav-item">
 				<a id="reply-title" class="nav-link active comment-reply-title" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true" style="font-size: 20px;">
@@ -106,6 +113,7 @@ $twenty_twenty_one_comment_count = get_comments_number();
 			</a>
 			</li>
 	      	</ul>
+			</div>
 			</div>',
 		)
 	);
