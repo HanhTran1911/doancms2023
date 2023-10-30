@@ -1,3 +1,14 @@
+<style>
+.button-share{
+	background: #007bff  !important ;
+	color: white !important;
+	border-radius: 5px !important;
+padding: 5px 10px !important;
+}
+*:hover{
+	pointer-events: none;	
+}
+	</style>
 <?php
 /**
  * Comment template functions
@@ -2499,7 +2510,7 @@ function comment_form( $args = array(), $post = null ) {
 	$checked_attribute  = ( $html5 ? ' checked' : ' checked="checked"' );
 
 	// Identify required fields visually and create a message about the indicator.
-	$required_indicator = ' ' . wp_required_field_indicator();
+	$required_indicator = ' ';
 	$required_text      = ' ' . wp_required_field_message();
 
 	$fields = array(
@@ -2577,13 +2588,20 @@ function comment_form( $args = array(), $post = null ) {
 	$defaults = array(
 		'fields'               => $fields,
 		'comment_field'        => sprintf(
-			'<p class="comment-form-comment">%s %s</p>',
+			'
+			<div class="card-body">
+			<div class="tab-content" id="myTabContent">
+				<div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+			<div class="form-group  comment-form-comment">%s %s</div> 
+			</div>
+			</div>
+			</div>',
 			sprintf(
-				'<label for="comment">%s%s</label>',
-				_x( 'Comment', 'noun' ),
+				
 				$required_indicator
 			),
-			'<textarea id="comment" name="comment" cols="45" rows="8" maxlength="65525"' . $required_attribute . '></textarea>'
+			'<textarea id="comment" class="form-control" style="border: 1px solid #c1c1c1;
+			border-radius: 5px;" placeholder="What are you thinking..." name="comment" cols="45" rows="8" maxlength="65525"' . $required_attribute . '></textarea>'
 		),
 		'must_log_in'          => sprintf(
 			'<p class="must-log-in">%s</p>',
@@ -2594,18 +2612,7 @@ function comment_form( $args = array(), $post = null ) {
 				wp_login_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
 			)
 		),
-		'logged_in_as'         => sprintf(
-			'<p class="logged-in-as">%s%s</p>',
-			sprintf(
-				/* translators: 1: User name, 2: Edit user link, 3: Logout URL. */
-				__( 'Logged in as %1$s. <a href="%2$s">Edit your profile</a>. <a href="%3$s">Log out?</a>' ),
-				$user_identity,
-				get_edit_user_link(),
-				/** This filter is documented in wp-includes/link-template.php */
-				wp_logout_url( apply_filters( 'the_permalink', get_permalink( $post_id ), $post_id ) )
-			),
-			$required_text
-		),
+		
 		'comment_notes_before' => sprintf(
 			'<p class="comment-notes">%s%s</p>',
 			sprintf(
@@ -2620,7 +2627,7 @@ function comment_form( $args = array(), $post = null ) {
 		'id_submit'            => 'submit',
 		'class_container'      => 'comment-respond',
 		'class_form'           => 'comment-form',
-		'class_submit'         => 'submit',
+		'class_submit'         => 'submit button-share',
 		'name_submit'          => 'submit',
 		'title_reply'          => __( 'Leave a Reply' ),
 		/* translators: %s: Author of the comment being replied to. */
@@ -2630,9 +2637,9 @@ function comment_form( $args = array(), $post = null ) {
 		'cancel_reply_before'  => ' <small>',
 		'cancel_reply_after'   => '</small>',
 		'cancel_reply_link'    => __( 'Cancel reply' ),
-		'label_submit'         => __( 'Post Comment' ),
+		'label_submit'         => __( 'Share' ),
 		'submit_button'        => '<input name="%1$s" type="submit" id="%2$s" class="%3$s" value="%4$s" />',
-		'submit_field'         => '<p class="form-submit">%1$s %2$s</p>',
+		'submit_field'         => '<p style="margin-right:20px;" class="form-submit text-right">%1$s %2$s</p>',
 		'format'               => 'xhtml',
 	);
 
@@ -2695,7 +2702,8 @@ function comment_form( $args = array(), $post = null ) {
 		else :
 
 			printf(
-				'<form action="%s" method="post" id="%s" class="%s"%s>',
+				'
+				<form action="%s"style="margin:20px;" method="post" id="%s" class="%s"%s> ',
 				esc_url( $args['action'] ),
 				esc_attr( $args['id_form'] ),
 				esc_attr( $args['class_form'] ),
@@ -2723,8 +2731,7 @@ function comment_form( $args = array(), $post = null ) {
 				 * @param string $user_identity  If the commenter is a registered user,
 				 *                               the display name, blank otherwise.
 				 */
-				echo apply_filters( 'comment_form_logged_in', $args['logged_in_as'], $commenter, $user_identity );
-
+				
 				/**
 				 * Fires after the is_user_logged_in() check in the comment form.
 				 *
@@ -2865,7 +2872,11 @@ function comment_form( $args = array(), $post = null ) {
 			 */
 			do_action( 'comment_form', $post_id );
 
-			echo '</form>';
+			echo '
+
+			</form>
+			
+			';
 
 		endif;
 		?>
