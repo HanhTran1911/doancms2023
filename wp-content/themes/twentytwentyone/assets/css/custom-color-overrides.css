@@ -70,6 +70,7 @@
   }
 .date-recent-post hr
 {
+  margin: 0 !important;
   height: 2px;
   background-color: white;
 }
