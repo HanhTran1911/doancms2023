@@ -3736,12 +3736,14 @@ table.wp-calendar-table caption {
 .site-title a {
 	color: currentColor;
 	font-weight: var(--branding--title--font-weight);
+	text-decoration: none !important;
 }
 
 .site-title a:link,
 .site-title a:visited,
 .site-title a:active {
 	color: currentColor;
+	text-decoration: none !important;
 }
 
 .site-title a:hover,
