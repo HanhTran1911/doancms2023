@@ -48,7 +48,7 @@
 				</ul><!-- .footer-navigation-wrapper -->
 			</nav><!-- .footer-navigation -->
 		<?php endif; ?>
-		<div class="container">
+		<div class="container" style="display: unset; background-color: #007b5e; border: unset;">
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
 					<p><u><a href="">National Transaction Corporation</a></u> is a Registered MSP/ISO of Elavon, Inc. Georgia [a wholly owned subsidiary of U.S. Bancorp, Minneapolis, MN]</p>
