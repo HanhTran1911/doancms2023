@@ -131,3 +131,79 @@
  {
      margin-top: 12px;
  }
+/**
+ * Custom Color Overrides
+ *
+ * This file is automatically populated if the user chooses custom colors in the Customizer.
+ */
+ .change-content {
+    margin-left: 10px;
+    display: flex;
+    overflow: hidden;
+  }
+  
+  .content-archive {
+    width: 35%;
+  }
+  .content-archive .widget-area {
+    display: unset;
+  }
+  .content-main {
+    width: 50%;
+  }
+  .content-recent-post {
+    width: 35%;
+  }
+  
+  .content-archive .widget-area .wp-block-latest-posts > li > a {
+    font-size: 13px !important;
+  }
+  .content-recent-post  ul
+  {
+    background-color: #72bbbe !important;
+    margin: 0 !important;
+    color: white;
+
+  }
+  .content-recent-post  ul li
+  {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    padding: 10px 0;
+  }
+  .content-recent-post  ul li a
+  {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 16px;
+    padding: 0 30px;
+  }
+  .content-recent-post  ul li a:hover
+  {
+    font-weight: 700;
+  }
+  .content-recent-post .viewall{
+    margin: 0 !important;
+    text-align: center;
+    background-color: #82ccd2;
+    padding: 5px 0;
+  }
+  .content-recent-post .viewall a
+  {
+    color: white;
+  }
+  .date-recent-post
+  {
+    display: flex;
+    align-items: center;
+    font-weight: 600;
+    font-family: initial;
+  }
+.date-recent-post hr
+{
+  margin: 0 !important;
+  height: 2px;
+  background-color: white;
+}
