@@ -25,6 +25,7 @@
     .footer-right {
         position: absolute;
         right: 0;
+        align-items: center;
     }
 
     .active {
@@ -108,11 +109,59 @@
         margin-right: 20px;
         align-items: center;
         list-style: none;
+
+    }
+
+    .custom-hover {
+        color: gray !important;
+    }
+
+    .custom-hover:hover {
+        color: black !important;
     }
 
     .dropdown-toggle {
         color: black;
         text-decoration: none;
+    }
+
+    .site-title a {
+        text-decoration: none !important;
+        
+    }
+    .site-title{
+        color: gray !important;
+    }
+    .site-branding {
+        display: flex;
+        align-items: center;
+    }
+
+    input:focus {
+        outline: none !important;
+    }
+
+    .menu-item a:focus {
+        outline: none !important;
+    }
+
+    .active a {
+        color: gray !important;
+        font-size: 15px;
+    }
+    .active a:hover {
+        color: black !important;
+        
+    }
+
+    .menu-item a {
+        color: gray !important;
+        font-size: 15px;
+    }
+
+    .menu-item a:hover {
+        color: black !important;
+        text-decoration: none !important;
     }
 </style>
 <?php
@@ -133,10 +182,9 @@ $wrapper_classes .= has_nav_menu('primary') ? ' has-menu' : '';
 <header id="masthead" class="<?php echo esc_attr($wrapper_classes); ?>" style="display: block;">
     <div class="container">
         <div class="footer-left">
-            <a class="navbar-brand py-3" href="#" style="text-decoration: none;display: flex;
-    align-items: center;">
-                <?php get_template_part('template-parts/header/site-branding'); ?>
-            </a>
+
+            <?php get_template_part('template-parts/header/site-branding'); ?>
+
             <li class="active"><a href="#" class="custom-a">Home </a></li>
 
             <form class="form-search py-3">
@@ -153,31 +201,31 @@ $wrapper_classes .= has_nav_menu('primary') ? ' has-menu' : '';
             <?php get_template_part('template-parts/header/site-nav'); ?>
 
             <div class="menu">
-                <i><svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
+                <i class="custom-hover"><svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
                         viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <path
                             d="M8 256a56 56 0 1 1 112 0A56 56 0 1 1 8 256zm160 0a56 56 0 1 1 112 0 56 56 0 1 1 -112 0zm216-56a56 56 0 1 1 0 112 56 56 0 1 1 0-112z" />
                     </svg> </i>
-                <a href="" class="custom-a">menu</a>
+                <a href="" class="custom-a custom-hover">menu</a>
             </div>
             <div class="icon-search">
-                <i><svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
+                <i class="custom-hover"><svg xmlns="http://www.w3.org/2000/svg" height="1.25em"
                         viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <path
                             d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z" />
                     </svg> </i>
-                <a href="" class="custom-a">Search</a>
+                <a href="" class="custom-a custom-hover">Search</a>
             </div>
 
             <li class="dropdown">
-                <i> <svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
+                <i class="custom-hover"> <svg xmlns="http://www.w3.org/2000/svg" height="1.5em"
                         viewBox="0 0 512 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
                         <path
                             d="M399 384.2C376.9 345.8 335.4 320 288 320H224c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z" />
                     </svg>
                 </i>
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
-                    aria-expanded="false">
+                <a href="#" class="dropdown-toggle custom-hover" data-toggle="dropdown" role="button"
+                    aria-haspopup="true" aria-expanded="false">
                     Account
                 </a>
                 <ul class="dropdown-menu">
