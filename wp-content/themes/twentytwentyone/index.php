@@ -53,7 +53,18 @@ get_header(); ?>
 		?>
 	</div>
 	<div class="content-comment">
-		<h1>comment</h1>
+		<div class="last-comment">
+			<?php
+			if (is_active_sidebar('sidebar-right')) : ?>
+
+				<aside class="widget-area">
+					<?php dynamic_sidebar('sidebar-right'); ?>
+				</aside><!-- .widget-area -->
+
+			<?php
+			endif;
+			?>
+		</div>
 	</div>
 </div>
 <?php
