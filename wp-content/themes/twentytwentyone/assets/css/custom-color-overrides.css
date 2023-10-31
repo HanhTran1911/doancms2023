@@ -37,6 +37,7 @@
  
  #footer-bottom a {
      text-decoration: none;
+     line-height: 1.6 !important;
  }
  
  #footer-bottom .widget-area li:hover a {
@@ -61,9 +62,9 @@
  }
  
  #footer-bottom li {
-     display: flex;
-     align-items: center;
-     font-size: 1rem; 
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px !important;
  }
  #footer-bottom p {
      font-size: 1rem; 
@@ -82,6 +83,7 @@
      margin-bottom: 0 !important;
      margin-top: 0 !important;
      padding: 1.8px 0;
+     align-items: start;
  }
  .footer-navigation-wrapper li a
  {
