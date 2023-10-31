@@ -1,3 +1,8 @@
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
 <?php
 /**
  * Server-side rendering of the `core/latest-posts` block.
@@ -51,7 +56,7 @@ function render_block_core_latest_posts( $attributes ) {
 	$filter_latest_posts_excerpt_more = static function( $more ) use ( $attributes ) {
 		$use_excerpt = 'excerpt' === $attributes['displayPostContentRadio'];
 		/* translators: %1$s is a URL to a post, excerpt truncation character, default … */
-		return $use_excerpt ? sprintf( __( ' … <a href="%1$s" rel="noopener noreferrer">Read more</a>' ), esc_url( get_permalink() ) ) : $more;
+		return $use_excerpt ? sprintf( __( ' … ' ), esc_url( get_permalink() ) ) : $more;
 	};
 
 	add_filter( 'excerpt_more', $filter_latest_posts_excerpt_more );
@@ -80,7 +85,7 @@ function render_block_core_latest_posts( $attributes ) {
 			$title = __( '(no title)' );
 		}
 
-		$list_items_markup .= '<li>';
+		$list_items_markup .= '<li class="lastpost">';
 
 		if ( $attributes['displayFeaturedImage'] && has_post_thumbnail( $post ) ) {
 			$image_style = '';
@@ -119,7 +124,7 @@ function render_block_core_latest_posts( $attributes ) {
 		}
 
 		$list_items_markup .= sprintf(
-			'<a class="wp-block-latest-posts__post-title" href="%1$s">%2$s</a>',
+			'<a style="text-decoration:none;" class="title_lastPost wp-block-latest-posts__post-title" href="%1$s">%2$s</a>',
 			esc_url( $post_link ),
 			$title
 		);
@@ -140,7 +145,7 @@ function render_block_core_latest_posts( $attributes ) {
 
 		if ( isset( $attributes['displayPostDate'] ) && $attributes['displayPostDate'] ) {
 			$list_items_markup .= sprintf(
-				'<time datetime="%1$s" class="wp-block-latest-posts__post-date">%2$s</time>',
+				'<a datetime="%1$s" class=" wp-block-latest-posts__post-date date_lastPost">%2$s</a>',
 				esc_attr( get_the_date( 'c', $post ) ),
 				get_the_date( '', $post )
 			);
@@ -156,7 +161,7 @@ function render_block_core_latest_posts( $attributes ) {
 			}
 
 			$list_items_markup .= sprintf(
-				'<div class="wp-block-latest-posts__post-excerpt">%1$s</div>',
+				'<a class="wp-block-latest-posts__post-excerpt">%1$s</a>',
 				$trimmed_excerpt
 			);
 		}
@@ -171,7 +176,7 @@ function render_block_core_latest_posts( $attributes ) {
 			}
 
 			$list_items_markup .= sprintf(
-				'<div class="wp-block-latest-posts__post-full-content">%1$s</div>',
+				'<div class=" wp-block-latest-posts__post-full-content">%1$s</div>',
 				wp_kses_post( $post_content )
 			);
 		}
@@ -201,7 +206,7 @@ function render_block_core_latest_posts( $attributes ) {
 	$wrapper_attributes = get_block_wrapper_attributes( array( 'class' => implode( ' ', $classes ) ) );
 
 	return sprintf(
-		'<ul %1$s>%2$s</ul>',
+		'<ul class="timeline" %1$s>%2$s</ul>',
 		$wrapper_attributes,
 		$list_items_markup
 	);
