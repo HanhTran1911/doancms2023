@@ -15,6 +15,13 @@
 .site textarea:focus {
 	outline: none !important; /* hoặc outline: 0; */
 }
+.active{
+	padding-left: 0; 
+    padding-right: 0; 
+     margin-left: 0; 
+     margin-right: 0; 
+     background: none;
+}
 	</style>
 <?php
 /**
@@ -2652,7 +2659,7 @@ function comment_form($args = array(), $post = null)
 			'
 			<div class="card-body">
 			<div class="tab-content" id="myTabContent">
-				<div class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
+				<div style="padding-left: 0; padding-right: 0;  margin-left: 0;  margin-right: 0; background: none;" class="tab-pane fade show active" id="posts" role="tabpanel" aria-labelledby="posts-tab">
 			<div class="form-group  comment-form-comment">%s %s</div> 
 			</div>
 			</div>
