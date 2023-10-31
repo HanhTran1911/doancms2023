@@ -46,14 +46,14 @@ $description = get_the_archive_description();
 			$post_year = get_the_date('y', $post->ID);
 			
 			?>
-			<div class="date">
+			<div class="date-recent-post">
 				<div class="date-day-month">
-			<div class="day"><?php echo $post_date; ?></div>
+			<div class="day-recent-post"><?php echo $post_date; ?></div>
 			<hr>
-			<div class="month"><?php echo  $post_month; ?></div>
+			<div class="month-recent-post"><?php echo  $post_month; ?></div>
 
 				</div>
-			<div class="year px-1"><?php echo  $post_year; ?></div>
+			<div class="year-recent-post px-1"><?php echo  $post_year; ?></div>
 			</div>
 			<a href="<?php the_permalink() ?>"><?php the_title(); ?></a>
             </li>

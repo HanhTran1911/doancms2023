@@ -61,14 +61,14 @@
   {
     color: white;
   }
-  .date
+  .date-recent-post
   {
     display: flex;
     align-items: center;
     font-weight: 600;
     font-family: initial;
   }
-.date hr
+.date-recent-post hr
 {
   height: 2px;
   background-color: white;
