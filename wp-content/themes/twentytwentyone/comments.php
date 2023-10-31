@@ -1,3 +1,19 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<style>
+	.card {
+		background: white;
+	border: none;
+	}
+	.comment-respond{
+		border: 1px solid #c1c1c1;
+		border-radius: 5px;
+	}
+
+</style>
+
+
 <?php
 /**
  * The template for displaying comments
@@ -17,27 +33,28 @@
  * the visitor has not yet entered the password,
  * return early without loading the comments.
  */
-if ( post_password_required() ) {
+if (post_password_required()) {
 	return;
 }
 
 $twenty_twenty_one_comment_count = get_comments_number();
 ?>
 
-<div id="comments" class="comments-area default-max-width <?php echo get_option( 'show_avatars' ) ? 'show-avatars' : ''; ?>">
+<div id="comments"
+	class="comments-area default-max-width <?php echo get_option('show_avatars') ? 'show-avatars' : ''; ?>">
 
 	<?php
-	if ( have_comments() ) :
+	if (have_comments()):
 		?>
 		<h2 class="comments-title">
-			<?php if ( '1' === $twenty_twenty_one_comment_count ) : ?>
-				<?php esc_html_e( '1 comment', 'twentytwentyone' ); ?>
-			<?php else : ?>
+			<?php if ('1' === $twenty_twenty_one_comment_count): ?>
+				<?php esc_html_e('1 comment', 'twentytwentyone'); ?>
+			<?php else: ?>
 				<?php
 				printf(
 					/* translators: %s: Comment count number. */
-					esc_html( _nx( '%s comment', '%s comments', $twenty_twenty_one_comment_count, 'Comments title', 'twentytwentyone' ) ),
-					esc_html( number_format_i18n( $twenty_twenty_one_comment_count ) )
+					esc_html(_nx('%s comment', '%s comments', $twenty_twenty_one_comment_count, 'Comments title', 'twentytwentyone')),
+					esc_html(number_format_i18n($twenty_twenty_one_comment_count))
 				);
 				?>
 			<?php endif; ?>
@@ -48,8 +65,8 @@ $twenty_twenty_one_comment_count = get_comments_number();
 			wp_list_comments(
 				array(
 					'avatar_size' => 60,
-					'style'       => 'ol',
-					'short_ping'  => true,
+					'style' => 'ol',
+					'short_ping' => true,
 				)
 			);
 			?>
@@ -58,35 +75,48 @@ $twenty_twenty_one_comment_count = get_comments_number();
 		<?php
 		the_comments_pagination(
 			array(
-				'before_page_number' => esc_html__( 'Page', 'twentytwentyone' ) . ' ',
-				'mid_size'           => 0,
-				'prev_text'          => sprintf(
+				'before_page_number' => esc_html__('Page', 'twentytwentyone') . ' ',
+				'mid_size' => 0,
+				'prev_text' => sprintf(
 					'%s <span class="nav-prev-text">%s</span>',
-					is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ),
-					esc_html__( 'Older comments', 'twentytwentyone' )
+					is_rtl() ? twenty_twenty_one_get_icon_svg('ui', 'arrow_right') : twenty_twenty_one_get_icon_svg('ui', 'arrow_left'),
+					esc_html__('Older comments', 'twentytwentyone')
 				),
-				'next_text'          => sprintf(
+				'next_text' => sprintf(
 					'<span class="nav-next-text">%s</span> %s',
-					esc_html__( 'Newer comments', 'twentytwentyone' ),
-					is_rtl() ? twenty_twenty_one_get_icon_svg( 'ui', 'arrow_left' ) : twenty_twenty_one_get_icon_svg( 'ui', 'arrow_right' )
+					esc_html__('Newer comments', 'twentytwentyone'),
+					is_rtl() ? twenty_twenty_one_get_icon_svg('ui', 'arrow_left') : twenty_twenty_one_get_icon_svg('ui', 'arrow_right')
 				),
 			)
 		);
 		?>
 
-		<?php if ( ! comments_open() ) : ?>
-			<p class="no-comments"><?php esc_html_e( 'Comments are closed.', 'twentytwentyone' ); ?></p>
+		<?php if (!comments_open()): ?>
+			<p class="no-comments">
+				<?php esc_html_e('Comments are closed.', 'twentytwentyone'); ?>
+			</p>
 		<?php endif; ?>
 	<?php endif; ?>
 
 	<?php
 	comment_form(
 		array(
-			'title_reply'        => esc_html__( 'Leave a comment', 'twentytwentyone' ),
-			'title_reply_before' => '<h2 id="reply-title" class="comment-reply-title">',
-			'title_reply_after'  => '</h2>',
+			'title_reply' => esc_html__('Make a post', 'twentytwentyone'),
+			'title_reply_before' => '
+			<div class="card">
+			<div  class="card-header">
+			<ul class="nav nav-tabs card-header-tabs" id="myTab" role="tablist">
+			<li class="nav-item">
+				<a id="reply-title" class="nav-link active comment-reply-title" data-toggle="tab" href="#posts" role="tab" aria-controls="posts" aria-selected="true" style="font-size: 20px;">
+			',
+			'title_reply_after' => '
+			</a>
+			</li>
+	      	</ul>
+			</div>
+			</div>',
 		)
 	);
 	?>
-
+	<!-- <a id="reply-title" class="nav-item"> </a> -->
 </div><!-- #comments -->
