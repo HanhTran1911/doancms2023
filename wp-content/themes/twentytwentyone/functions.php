@@ -373,6 +373,21 @@ function twenty_twenty_one_widgets_init() {
 	);
 }
 add_action( 'widgets_init', 'twenty_twenty_one_widgets_init' );
+function twenty_twenty_one_widgets_init_bottom() {
+
+	register_sidebar(
+		array(
+			'name'          => esc_html__( 'Footer_bottom', 'twentytwentyone' ),
+			'id'            => 'sidebar-bottom',
+			'description'   => esc_html__( 'Add widgets here to appear in your footer.', 'twentytwentyone' ),
+			'before_widget' => '<section id="%1$s" class="widget %2$s">',
+			'after_widget'  => '</section>',
+			'before_title'  => '<h2 class="widget-title">',
+			'after_title'   => '</h2>',
+		)
+	);
+}
+add_action( 'widgets_init', 'twenty_twenty_one_widgets_init_bottom' );
 
 /**
  * Sets the content width in pixels, based on the theme's design and stylesheet.
