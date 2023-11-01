@@ -57,7 +57,7 @@ get_header(); ?>
 			<?php
 			if (is_active_sidebar('sidebar-right')) : ?>
 
-				<aside class="widget-area">
+				<aside class="widget-area mx-3">
 					<?php dynamic_sidebar('sidebar-right'); ?>
 				</aside><!-- .widget-area -->
 
