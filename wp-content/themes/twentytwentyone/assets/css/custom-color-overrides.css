@@ -8,7 +8,7 @@
  #footer-bottom {
      background-color: #007b5e;
      font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
- 
+     padding-top: 40px;
  }
  
  #footer-bottom .widget-area {
@@ -33,6 +33,7 @@
  
  #footer-bottom #colophon {
      padding: 0;
+     margin-top: 0 !important;
  }
  
  #footer-bottom a {

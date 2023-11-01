@@ -5940,6 +5940,9 @@ a {
 	margin: auto 0;
   }
   /* date */
+  .search .post-thumbnail img {
+	height: auto !important;
+  }
   .date {
 	display: block;
 	text-align: center;
