@@ -6081,9 +6081,15 @@ a {
 	font-size: 13px !important;
   }
   .content-area{
-	background:url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png);
+	background:url(http://fit.tdc.edu.vn/addons/default/themes/bootstrapThree/img/bg_pattern.png) !important;
   }
   #commentform{
 	background-color: #FFFF;
 	margin: 0 !important;
+  }
+  .card{
+	margin-bottom: 0 !important;
+  }
+  .form-submit{
+	padding-bottom: 37px;
   }
